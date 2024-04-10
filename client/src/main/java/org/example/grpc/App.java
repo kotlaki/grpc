@@ -42,6 +42,11 @@ public class App {
                     currentVal[0].set(currentVal[0].getAndIncrement() + response.getGenerateValue());
                 }
                 logger.info("new value: {}", response.getGenerateValue());
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
                 logger.info("currentVal: {}", currentVal);
             }
 
